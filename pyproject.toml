@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cmmh3"
+version = "0.1.0"
+description = ""
+authors = ["dream2333 <vincentqng@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+cython = "^3.0.0b3"
+
+
+[tool.poetry.group.dev.dependencies]
+mmh3 = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core","cython" ,"wheel",]
+build-backend = "poetry.core.masonry.api"
