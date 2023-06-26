@@ -1,22 +1,22 @@
 [tool.poetry]
-name = "cmmh3"
+name = "fmmh3"
 version = "0.1.0"
-description = ""
+description = "C implementation of MurmurHash3 for Python."
 authors = ["dream2333 <vincentqng@gmail.com>"]
+license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-cython = "^3.0.0b3"
-
+python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
-mmh3 = "^4.0.0"
+Cython = "3.0.0b3"
 
 [build-system]
-requires = ["poetry-core", "Cython","setuptools"]
+requires = ["poetry-core", "cython","setuptools"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.build]
 generate-setup-file = false
 script = 'setup.py'
+

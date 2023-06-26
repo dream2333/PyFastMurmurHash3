@@ -3,7 +3,6 @@ cdef extern from "<stdint.h>":
     ctypedef int uint32 "__uint32_t"
 
 cdef extern from "<string.h>":
-    # 导入strlen函数
     int strlen(const char *s)
 
 cdef extern from "murmur3.h":

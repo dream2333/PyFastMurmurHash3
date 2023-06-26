@@ -3,8 +3,7 @@ import shutil
 from setuptools import setup, Extension, Distribution
 from Cython.Build import cythonize, build_ext
 
-
-compile_args = ["-march=native", "-O3", "-msse", "-msse2", "-mfma", "-mfpmath=sse"]
+compile_args = ["-O3", "-msse", "-msse2", "-mfma", "-mfpmath=sse"]
 link_args = []
 include_dirs = []
 
@@ -12,12 +11,12 @@ ext = [
     Extension(
         "*",
         sources=[
-            "cmmh3/*.pyx",
-            "cmmh3/includes/murmur3.c",
+            "fmmh3/*.pyx",
+            "fmmh3/includes/murmur3.c",
         ],
         # libraries=["murmur3"],
-        library_dirs=["cmmh3/includes"],
-        include_dirs=["cmmh3/includes"],
+        library_dirs=["fmmh3/includes"],
+        include_dirs=["fmmh3/includes"],
         extra_compile_args=compile_args,
     )
 ]

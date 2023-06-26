@@ -1,25 +1,22 @@
-from cmmh3.cmurmur3 import hash128_x64, hash128_x86, hash32_x86
-from mmh3 import hash128
+import fmmh3
+import mmh3
+import tests.pymmh3 as pymmh3
 import time
 
-
-def caculate_time(func):
-    def wrapper(*args, **kwargs):
-        start = time.perf_counter()
-        func(*args, **kwargs)
-        end = time.perf_counter()
-        return end - start
-
-    return wrapper
+key = b"n" * 5000
 
 
-def test_func(func, key=b"hello world"):
-    @caculate_time
-    def wrapper(*args, **kwargs):
-        for i in range(10000000):
-            func(*args, **kwargs)
+def test_func(func, key, times, **other_kwargs):
+    start = time.perf_counter()
+    for i in range(times):
+        func(key, 13, **other_kwargs)
+    end = time.perf_counter()
+    return end - start
 
-    return wrapper(key, 13)
 
-
-print(test_func(hash128_x64))
+# print("fmmh3:", test_func(fmmh3.hash128_x64, key))
+# print("mmh3:", test_func(mmh3.hash128, key, signed=False))
+print(
+    test_func(mmh3.hash128, key, 10_000_00, signed=False)
+    / test_func(fmmh3.hash128_x64, key, 10_000_00)
+)

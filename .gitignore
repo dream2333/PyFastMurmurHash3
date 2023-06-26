@@ -1,4 +1,5 @@
-cmmh3/cmurmur3.c
+fmmh3/fastmmh3.c
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
