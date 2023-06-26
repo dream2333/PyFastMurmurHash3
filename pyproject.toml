@@ -14,5 +14,9 @@ cython = "^3.0.0b3"
 mmh3 = "^4.0.0"
 
 [build-system]
-requires = ["poetry-core","cython" ,"wheel",]
+requires = ["poetry-core", "Cython","setuptools"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.build]
+generate-setup-file = false
+script = 'setup.py'
