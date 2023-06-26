@@ -1,6 +1,6 @@
 # FastMurmurHash3
 
-fmmh3 是一个使用 C 语言和 Cython 混合开发的 Python 扩展模块，它对 C 语言的 MurmurHash3 哈希函数进行了包装，使其能够在 Python 中使用。相比纯 Python 版本的 MurmurHash3，fmmh3 的性能要快上几十至上百倍不等。相比于另一个c语言实现 mmh3 库，在处理中型及小型文本上，fmmh3 的性能要快上 1-2.5 倍不等。
+`fmmh3` 是一个使用 C 语言和 Cython 混合开发的 Python 扩展模块，它对 C 语言的 MurmurHash3 哈希函数进行了包装，使其能够在 Python 中使用。相比纯 Python 版本的 [MurmurHash3](https://github.com/wc-duck/pymmh3)，`fmmh3` 的性能要快上几十至上百倍不等。相比于另一个c语言实现 [mmh3](https://github.com/hajimes/mmh3) 库，在处理中型及小型文本上，`fmmh3` 的性能要快上 1-2.5 倍不等。
 
 ## 安装
 
@@ -60,7 +60,7 @@ hash128_x64_value = hash128_x64(key, seed)
 
 ## 作者
 
-本项目由 Dream2333 使用 Python、Cython、C 语言混合开发。
+本项目由 Dream2333 开发
 
 MurmurHash 算法最初由 [Austin Appleby](https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp) 提出
 
@@ -72,10 +72,10 @@ C 版本算法来源于 [PeterScott](https://github.com/PeterScott/murmur3)
 
 如果你想为这个项目做出贡献，你可以：
 
-- 在 GitHub 上报告问题或提出建议。
-- 提交 pull 请求来修复问题或添加新功能。
+- 在 GitHub 上报告问题 [issues](https://github.com/dream2333/FastMurmurHash3/issues) 或提出建议。
+- 提交 [pull](https://github.com/dream2333/FastMurmurHash3/pulls) 请求来修复问题或添加新功能。
 - 分享这个项目，让更多的人知道它。
 
 ## 许可证
 
-这个项目使用 MIT 许可证。
+这个项目使用 [MIT](https://github.com/dream2333/FastMurmurHash3/blob/main/LICENSE) 许可证。
