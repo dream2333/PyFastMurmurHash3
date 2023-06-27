@@ -1,6 +1,3 @@
-'''
-
-'''
 def hash128_x64(key, seed):
     def fmix(k):
         k ^= k >> 33

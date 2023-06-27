@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "fmmh3"
-version = "0.1.0"
+version = "0.0.1"
 description = "C implementation of MurmurHash3 for Python."
 authors = ["dream2333 <vincentqng@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+# include = ["fmmh3/**/*.so", "fmmh3/**/*.pxd"]
+# exclude = ["fmmh3/**/*.c", "fmmh3/**/*.h", "fmmh3/**/*.pyx", "fmmh3/**/*.pxd"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -13,10 +15,9 @@ python = "^3.8"
 Cython = "3.0.0b3"
 
 [build-system]
-requires = ["poetry-core", "cython","setuptools"]
+requires = ["poetry-core", "cython>=3.0.0b3", "setuptools"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.build]
 generate-setup-file = false
 script = 'setup.py'
-

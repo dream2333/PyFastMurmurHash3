@@ -1,7 +1,5 @@
-import os
-import shutil
-from setuptools import setup, Extension, Distribution
-from Cython.Build import cythonize, build_ext
+from setuptools import Extension, Distribution
+from Cython.Build import cythonize
 
 compile_args = ["-O3", "-msse", "-msse2", "-mfma", "-mfpmath=sse"]
 link_args = []
@@ -21,13 +19,14 @@ ext = [
     )
 ]
 
-ext_modules = cythonize(ext, language_level=3, annotate=False)
+ext_modules = cythonize(
+    ext,
+    language_level=3,
+    annotate=False,
+    force=True,
+)
 dist = Distribution({"ext_modules": ext_modules})
-cmd = build_ext(dist)
-cmd.ensure_finalized()
-cmd.run()
-
-# Copy the extensions into the root directory so they can be imported
-for output in cmd.get_outputs():
-    relative_extension = os.path.relpath(output, cmd.build_lib)
-    shutil.copyfile(output, relative_extension)
+build_ext_cmd = dist.get_command_obj("build_ext")
+build_ext_cmd.ensure_finalized()
+build_ext_cmd.inplace = 1
+build_ext_cmd.run()

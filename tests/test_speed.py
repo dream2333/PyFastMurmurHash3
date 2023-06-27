@@ -1,6 +1,6 @@
 import fmmh3
 import mmh3
-import tests.pymmh3 as pymmh3
+
 import time
 
 key = b"n" * 5000
